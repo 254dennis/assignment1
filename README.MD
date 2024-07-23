@@ -8,4 +8,9 @@ close your web  for question 2.
 
 QUESTION 2.
 
-1. 
+
+
+
+
+### QUESTION 3
+1. Run node question3.js to run net salary culculator.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Limit </title>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Speed Detector</h2>
+    
+        <input type="number" id="speedInput" name="speedInput" min="0" required placeholder="key in speed here"><br><br>
+        <button onclick="checkSpeed()">Enter Speed</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkSpeed() {
+            const speed = document.getElementById("speedInput").value;
+            const speedLimit = 70;
+            const kmPerDemeritPoint = 5;
+            const maxDemeritPoints = 12;
+
+            if (speed < speedLimit + kmPerDemeritPoint) {
+                document.getElementById("result").innerText = "Ok";
+                return;
+            }
+
+            const demeritPoints = Math.floor((speed - speedLimit) / kmPerDemeritPoint);
+            
+            if (demeritPoints > maxDemeritPoints) {
+                document.getElementById("result").innerText = "License suspended";
+            } else {
+                document.getElementById("result").innerText = `Points: ${demeritPoints}`;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
